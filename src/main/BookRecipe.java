@@ -3,6 +3,8 @@ package main;
 public class BookRecipe {
     public static void main(String[] args) {
         Output out = new ConsoleOutput();
-        out.println("Hello World!");
+        Input in = new ConsoleInput();
+        String answer = in.requestString("How is the winter?");
+        out.println("Yes it is " + answer);
     }
 }
