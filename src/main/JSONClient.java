@@ -6,7 +6,7 @@ import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class JsonClient {
+public class JSONClient {
     public static String getAllRecipes() {
         StringBuilder response = new StringBuilder();
         try {

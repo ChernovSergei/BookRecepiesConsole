@@ -2,19 +2,22 @@ package main;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ShowRecepieCommand extends Command {
-    String recipeStep = "-%s %s the %s using %s";
+public class CommandShowRecepie extends Command {
 
-    public ShowRecepieCommand(Input in, Output out) {
+    public CommandShowRecepie(Input in, Output out) {
         super(in, out);
     }
 
     @Override
     public void execute() {
-        showRecipe(getRecipe(in.requestInteger("Which recipe you would like to see?")));
+        int recipeId = in.requestInteger("Which recipe you would like to see?");
+        String recipeInJSON = JSONClient.getRecipe(recipeId);
+        Recipe recipeToShow = JSONRecipeConverter.jsonToRecepie(recipeInJSON);
+        showRecipe(recipeToShow);
     }
 
     public void showRecipe(Recipe storageRecipe) {
+        String recipeStep = "-%s %s the %s using %s";
         out.println(storageRecipe.getName());
         AtomicInteger stepIndex = new AtomicInteger(0);
         storageRecipe.getSteps().forEach(step -> {
@@ -24,10 +27,5 @@ public class ShowRecepieCommand extends Command {
             String tool = step.getTool().getName();
             out.println(String.format(recipeStep, index, action, product, tool));
         });
-    }
-
-    public Recipe getRecipe(int recipeId) {
-        String recipeInJSON = JsonClient.getRecipe(recipeId);
-        return JSONRecipeConverter.jsonToRecepie(recipeInJSON);
     }
 }

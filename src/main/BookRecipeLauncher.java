@@ -2,9 +2,9 @@ package main;
 
 public class BookRecipeLauncher {
     public static void main(String[] args) {
-        Output out = new ConsoleOutput();
-        Input in = new ConsoleInput();
-        Menu menu = new Menu(in, out);
-        menu.showMainMenu();
+        Output out = new OutputConsole();
+        Input in = new InputConsole();
+        MenuMain menuMain = new MenuMain(in, out);
+        menuMain.showMainMenu();
     }
 }

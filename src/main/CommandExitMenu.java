@@ -1,8 +1,8 @@
 package main;
 
-public class ExitCommand extends Command {
+public class CommandExitMenu extends Command {
 
-    public ExitCommand(Input in, Output out) {
+    public CommandExitMenu(Input in, Output out) {
         super(in, out);
     }
 
