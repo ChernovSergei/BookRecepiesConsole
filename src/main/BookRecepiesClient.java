@@ -6,7 +6,9 @@ import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class JSONClient {
+public class BookRecepiesClient {
+    //TODO - Refactor all methods - delete/ combine repeated methods
+
     public static String getAllRecipes() {
         StringBuilder response = new StringBuilder();
         try {

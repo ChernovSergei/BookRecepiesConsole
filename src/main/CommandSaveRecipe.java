@@ -10,6 +10,6 @@ public class CommandSaveRecipe extends Command {
     public void execute() {
         String newRecipe = JSONRecipeConverter.recepieToJson(super.recipe);
         out.print(newRecipe);
-        JSONClient.saveRecipe(newRecipe);
+        BookRecepiesClient.saveRecipe(newRecipe);
     }
 }

@@ -9,8 +9,8 @@ public class CommandShowRecepies extends Command {
     }
 
     public void execute() {
-        String listOfRecipes = JSONClient.getAllRecipes();
+        String listOfRecipes = BookRecepiesClient.getAllRecipes();
         Map<String, String> recipeNames = JSONRecipeBookConverter.jsonToRecipeList(listOfRecipes);
-        recipeNames.forEach((id, name) -> System.out.println(id + " " + name));
+        recipeNames.forEach((id, name) -> super.out.println(id + " " + name));
     }
 }

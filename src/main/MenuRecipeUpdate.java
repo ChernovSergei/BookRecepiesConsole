@@ -3,12 +3,12 @@ package main;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MenuRecipeUpdate {
+public class MenuRecipeUpdate implements Menu{
     Output out;
     Input in;
     StringBuilder recipeMenu = new StringBuilder();
     Map<Integer, Command> commands = new HashMap<>();
-    Recipe recipe = null;
+    Recipe recipe;
 
     public MenuRecipeUpdate(Input in, Output out, Recipe recipe) {
         this.out = out;
@@ -30,7 +30,7 @@ public class MenuRecipeUpdate {
         commands.put(6, new CommandExitMenu(in, out));
     }
 
-    public void showMenuRecipe() {
+    public void showMenu() {
         int answer = 0;
         while (answer != 6) {
             out.print(recipeMenu.toString());

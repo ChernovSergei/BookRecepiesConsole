@@ -3,7 +3,7 @@ package main;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MenuMain {
+public class MenuMain implements Menu {
     Output out;
     Input in;
     StringBuilder mainMenu = new StringBuilder();
@@ -22,13 +22,13 @@ public class MenuMain {
         mainMenu.append("==============================================\n");
         commands.put(1, new CommandShowRecepies(in, out));
         commands.put(2, new CommandShowRecepie(in, out));
-        commands.put(3, new CommandCreateRecipe(in, out));
-        commands.put(4, new CommandEditRecipe(in, out));
+        commands.put(3, new CommandCallCreateMenu(in, out));
+        commands.put(4, new CommandCallUpdateMenu(in, out));
         commands.put(5, new CommandDeleteRecipe(in, out));
         commands.put(6, new CommandExitMenu(in, out));
     }
 
-    public void showMainMenu() {
+    public void showMenu() {
         int answer = 0;
         while (answer != 6) {
             out.print(mainMenu.toString());

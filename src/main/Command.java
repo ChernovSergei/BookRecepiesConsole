@@ -1,6 +1,7 @@
 package main;
 
 public abstract class Command {
+    //TODO - Remove 1st constructor
     Input in;
     Output out;
     Recipe recipe;

@@ -9,6 +9,6 @@ public class CommandDeleteRecipe extends Command {
     @Override
     public void execute() {
         int recipeId = in.requestInteger("Which recipe you would like to delete?");
-        JSONClient.deleteRecipe(recipeId);
+        BookRecepiesClient.deleteRecipe(recipeId);
     }
 }

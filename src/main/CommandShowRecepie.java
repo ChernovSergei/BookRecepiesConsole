@@ -11,7 +11,7 @@ public class CommandShowRecepie extends Command {
     @Override
     public void execute() {
         int recipeId = in.requestInteger("Which recipe you would like to see?");
-        String recipeInJSON = JSONClient.getRecipe(recipeId);
+        String recipeInJSON = BookRecepiesClient.getRecipe(recipeId);
         Recipe recipeToShow = JSONRecipeConverter.jsonToRecepie(recipeInJSON);
         showRecipe(recipeToShow);
     }

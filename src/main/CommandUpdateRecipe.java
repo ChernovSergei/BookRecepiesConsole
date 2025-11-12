@@ -9,6 +9,6 @@ public class CommandUpdateRecipe extends Command {
     @Override
     public void execute() {
         String updatedRecipe = JSONRecipeConverter.recepieToJson(super.recipe);
-        JSONClient.updateRecipe(updatedRecipe);
+        BookRecepiesClient.updateRecipe(updatedRecipe);
     }
 }
